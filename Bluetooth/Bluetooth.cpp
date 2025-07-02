@@ -291,28 +291,35 @@ namespace WPEFramework
                         Utils::String::contains(discProfile, "MOUSE") ||
                         Utils::String::contains(discProfile, "JOYSTICK"))) {
                             lenDevOpDiscType = BTRMGR_DEVICE_OP_TYPE_AUDIO_AND_HID;
+                        LOGINFO("lenDevOpDiscType = BTRMGR_DEVICE_OP_TYPE_AUDIO_AND_HID");
                         }
                     else if (Utils::String::contains(discProfile, "LOUDSPEAKER") ||
                             Utils::String::contains(discProfile, "HEADPHONES") ||
                             Utils::String::contains(discProfile, "WEARABLE HEADSET") ||
                             Utils::String::contains(discProfile, "HIFI AUDIO DEVICE")) {
                         lenDevOpDiscType = BTRMGR_DEVICE_OP_TYPE_AUDIO_OUTPUT;
+LOGINFO("lenDevOpDiscType = BTRMGR_DEVICE_OP_TYPE_AUDIO_OUTPUT");
                     }
                     else if (Utils::String::contains(discProfile, "SMARTPHONE") ||
                              Utils::String::contains(discProfile, "TABLET")) {
                         lenDevOpDiscType = BTRMGR_DEVICE_OP_TYPE_AUDIO_INPUT;
+LOGINFO("lenDevOpDiscType = BTRMGR_DEVICE_OP_TYPE_AUDIO_INPUT");
+
                     }
                     else if (Utils::String::contains(discProfile, "KEYBOARD") ||
                              Utils::String::contains(discProfile, "MOUSE") ||
                              Utils::String::contains(discProfile, "JOYSTICK")) {
                         lenDevOpDiscType = BTRMGR_DEVICE_OP_TYPE_HID;
+LOGINFO("lenDevOpDiscType = BTRMGR_DEVICE_OP_TYPE_HID");
                     }
                     else if (Utils::String::contains(discProfile, "LE TILE") ||
                              Utils::String::contains(discProfile, "LE")) {
                         lenDevOpDiscType = BTRMGR_DEVICE_OP_TYPE_LE;
+LOGINFO("lenDevOpDiscType = BTRMGR_DEVICE_OP_TYPE_LE");
                     }
                     else if (Utils::String::contains(discProfile, "DEFAULT")) {
                         lenDevOpDiscType = BTRMGR_DEVICE_OP_TYPE_UNKNOWN;
+ LOGINFO("lenDevOpDiscType = BTRMGR_DEVICE_OP_TYPE_UNKNOWN");
                     }
 
                     rc = BTRMGR_StartDeviceDiscovery(0, lenDevOpDiscType);
